@@ -1,0 +1,26 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "landing page for Nam Tran ",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/nhtranngoc/landing-page"
+  },
+  "keywords": [
+    "tears",
+    "opt",
+    "jobless",
+    "homeless",
+    "help"
+  ],
+  "author": "Nam Tran",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
