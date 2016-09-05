@@ -1,0 +1,55 @@
+html {
+	/*background: #9C2B1B;*/
+	background: #AC2B37;
+}
+
+body {
+	
+}
+
+h1, p {
+	color: #ffffff;
+	-webkit-transition: all 1s ease-in-out;
+  	-moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+   	transition: all 1s ease-in-out;
+}
+
+h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 5em;
+	line-height: 1em;
+	letter-spacing: 2px;
+}
+
+span {
+	color: #A9B0B7;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1em;
+}
+
+.d3-gears svg {
+	display: block;
+	margin: auto;
+	/*border: 1px solid #333;*/
+	margin-top: 40px;
+	overflow: visible;
+	width: 25%;
+}
+
+li {
+	display:inline ;
+	margin:0 4px;
+}
+
+a {
+	color:white;
+	text-decoration:none;
+}
+
+a:hover, a:visited {
+	color:lightgray;
+}
