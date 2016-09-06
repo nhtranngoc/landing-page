@@ -21,6 +21,8 @@
   "author": "Nam Tran",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "http-proxy": "^1.14.0",
+    "http-proxy-rules": "^1.0.1"
   }
 }
