@@ -1,7 +1,9 @@
 html {
 	/*background: #9C2B1B;*/
 	/*background: #AC2B37;*/
-	background: #8B111D;
+	/*background: #8B111D;*/
+	/*background: black;*/
+	background: #355C7D;
 }
 
 body {
@@ -25,6 +27,7 @@ h1 {
 
 span {
 	color: #A9B0B7;
+	/*color: #6C5B7B;*/
 }
 
 p {

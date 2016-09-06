@@ -81,11 +81,12 @@
         svg.selectAll(".gear-path")
             .style("fill", function() {
                 // var colors = ["#1C7064", "#B2642C", "#389525"];
-                var colors = ["#559C92", "#F9B687", "#F0828D"];
+                // var colors = ["#559C92", "#F9B687", "#F0828D"];
                 // var colors = [
                 //     "#1C7064", "#559C92", "#328378", "#0B5A4F", "#003F37", 
                 //     "#B2642C", "#F9B687", "#D1854F", "#904612", "#652A00",
                 //     "#389525", "#81D070", "#55AE42", "#21780F", "#0F5400"];
+                var colors = ["#F8B195", "#F67280", "#C06C84"]
                 return colors[Math.floor(Math.random()*colors.length)];
             })
 
