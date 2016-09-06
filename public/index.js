@@ -2,6 +2,14 @@
 
 (function($) {
 
+    // Poor man's animation
+    $(document).ready(function() {
+        $("#github").addClass("load");
+        setTimeout(function() {$("#linkedin").addClass("load")}, 200);
+        setTimeout(function() {$("#instagram").addClass("load")}, 400);
+        setTimeout(function() {$("#resume").addClass("load")}, 600);
+    })
+
     $(function () {
         $('.d3-gears').on('mousedown', function(e) {
             e.originalEvent.preventDefault();

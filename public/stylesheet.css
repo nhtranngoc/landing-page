@@ -12,10 +12,6 @@ body {
 
 h1, p {
 	color: #ffffff;
-	-webkit-transition: all 1s ease-in-out;
-  	-moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-   	transition: all 1s ease-in-out;
 }
 
 h1 {
@@ -47,6 +43,17 @@ p {
 li {
 	display:inline ;
 	margin:0 4px;
+	opacity: 0;
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+	-ms-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
+
+}
+
+.load {
+	opacity: 1;
 }
 
 a {
