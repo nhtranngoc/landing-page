@@ -6,10 +6,6 @@ html {
 	background: #355C7D;
 }
 
-body {
-	
-}
-
 h1, p {
 	color: #ffffff;
 }
@@ -36,7 +32,7 @@ p {
 	margin: auto;
 	/*border: 1px solid #333;*/
 	margin-top: 40px;
-	overflow: visible;
+	overflow: hidden;
 	width: 25%;
 }
 

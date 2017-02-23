@@ -40,16 +40,6 @@
             newGear,
             gearFactors = [128,64,32,16];
 
-        var dragBehaviour = Gear.dragBehaviour(gears, svg);
-
-        dragBehaviour
-            .on("dragstart.i", function() {
-                clearTimeout(changeInterval);
-            })
-            .on("dragend.i", function() {
-                clearTimeout(changeInterval);
-            });
-
         for (var i = 0; i < gearFactors.length; i++) {
             factor = gearFactors[i];
             radius = factor / 2;
@@ -59,10 +49,6 @@
             // holeRadius = 0.27
             gears.push(newGear = Gear.create(svg, { radius: radius, teeth: teeth, x: 0, y: 0, addendum: 3.1, dedendum: 5, thickness:0.7, profileSlope: .5, holeRadius: holeRadius }));
             // gears.push(newGear = Gear.create(svg, { radius: , teeth: teeth, x: 0, y: 0, addendum: 8, holeRadius: holeRadius }));
-            
-            // dragging only works right in chrome when using responsive viewbox!
-            //if ($.browser.chrome)
-                newGear.call(dragBehaviour);
         }
 
         // gears = gears.shuffle();
