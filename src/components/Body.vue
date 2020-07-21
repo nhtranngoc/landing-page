@@ -37,6 +37,7 @@ export default {
 
 .Body {
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 0;
   right: 0;
