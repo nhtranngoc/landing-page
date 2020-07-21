@@ -12,7 +12,7 @@ export default {
     name: 'Canvas',
     data() {
         return {
-            boidSize: 25,
+            boidSize: 20,
             boids: [],
             visualRange: 70,
             food : {},
