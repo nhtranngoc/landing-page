@@ -41,9 +41,12 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: #f2ebeb;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
   /* left: 50%;
   transform: translateX(-50%);
   position: relative; */

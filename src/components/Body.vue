@@ -3,7 +3,7 @@
   <p class="name" @click="toggleName"> Nam Tr{{vietname}}n </p>
   <p class="tag"> Programmer, Hardware tinkerer, Maker and Consumer of food.</p>
   <div class="icons">
-    <a class="icon" href="/blog" target="_blank" title="Blog"> <span class="fas fa-rss"></span> </a>
+    <a class="icon" href="https://medium.com/@namtran_77878/" target="_blank" title="Blog"> <span class="fab fa-medium"></span> </a>
     <a class="icon" href="https://www.linkedin.com/in/nhtranngoc" target="_blank" title="LinkedIn"> <span class="fab fa-linkedin"></span> </a>
     <a class="icon" href="https://github.com/nhtranngoc/" target="_blank" title="GitHub"> <span class="fab fa-github-alt"></span> </a>
   </div>

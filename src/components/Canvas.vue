@@ -58,7 +58,7 @@ export default {
                 boid.pos = boid.pos.add(boid.dir);
                 // this.avoid(boid, this.obstacle)
                 // this.keepWithinBounds(boid);
-                this.drawBoid(boid.pos.x,boid.pos.y,boid.r,'rgb(200,0,0)');
+                this.drawBoid(boid.pos.x,boid.pos.y,boid.r,'rgb(200,10,10)');
             }
 
             // Calculate and draw food source
@@ -67,7 +67,7 @@ export default {
             if(this.food.size <= 0) {
                 this.food = this.createNewFood();
             }
-            this.drawBoid(this.food.pos.x, this.food.pos.y, this.food.size, 'rgb(0,0,200)');
+            this.drawBoid(this.food.pos.x, this.food.pos.y, this.food.size, '#b3adad');
             
             window.requestAnimationFrame(this.redraw);
         },
@@ -243,7 +243,6 @@ export default {
 #canvas {
     position: absolute;
     z-index: 1;
-    /* width: 99%;
-    height: 99%; */
+    background-color: #f2ebeb;
 }
 </style>
