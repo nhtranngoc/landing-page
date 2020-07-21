@@ -10,7 +10,7 @@ export default {
     name: 'Canvas',
     data() {
         return {
-            boidSize: 20,
+            boidSize: 17,
             boids: [],
             visualRange: 70,
             food : {},
@@ -67,7 +67,7 @@ export default {
             }
 
             // Calculate and draw food source
-            const shrinkFactor = 0.1;
+            const shrinkFactor = 0.05;
             this.food.size -= shrinkFactor;
             if(this.food.size <= 0) {
                 this.food = this.createNewFood();
@@ -94,15 +94,20 @@ export default {
             ctx.closePath();
         },
         collisionCheck : function(boid) {
+            const frictionFactor = 0.1;
             if(boid.pos.x > this.width) {
+                boid.dir.x -= frictionFactor;
                 boid.pos.x = 0;
             } else if(boid.pos.x < 0) {
+                boid.dir.x -= frictionFactor;
                 boid.pos.x = this.width;
             }
 
             if(boid.pos.y > this.height) {
+                boid.dir.y -= frictionFactor;
                 boid.pos.y = 0;
             } else if(boid.pos.y < 0) {
+                boid.dir.y -= frictionFactor;
                 boid.pos.y = this.height;
             }
         },
@@ -170,7 +175,7 @@ export default {
             }
         },
         limitSpeed : function(boid) {
-            const speedLimit = 4;
+            const speedLimit = 3.5;
 
             const speed = Math.sqrt(boid.dir.x * boid.dir.x + boid.dir.y + boid.dir.y);
 
@@ -180,7 +185,7 @@ export default {
             }
         },
         seek: function(boid, pos) {
-            const seekFactor = 0.0003;
+            const seekFactor = 0.0002;
 
             boid.dir.x += (pos.x - boid.pos.x) * seekFactor;
             boid.dir.y += (pos.y - boid.pos.y) * seekFactor;
