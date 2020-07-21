@@ -1,11 +1,11 @@
 <template>
   <div class="Body">
-  <p class="name"> Nam Tran </p>
+  <p class="name" @click="toggleName"> Nam Tr{{vietname}}n </p>
   <p class="tag"> Programmer, Hardware tinkerer, Maker and Consumer of food.</p>
   <div class="icons">
     <a class="icon" href="/blog" target="_blank" title="Blog"> <span class="fas fa-rss"></span> </a>
     <a class="icon" href="https://www.linkedin.com/in/nhtranngoc" target="_blank" title="LinkedIn"> <span class="fab fa-linkedin"></span> </a>
-    <a class="icon" href="https://github.com/nhtranngoc/" target="_blank" title="GitHub"> <span class="fab fa-github"></span> </a>
+    <a class="icon" href="https://github.com/nhtranngoc/" target="_blank" title="GitHub"> <span class="fab fa-github-alt"></span> </a>
   </div>
   </div>
 </template>
@@ -17,6 +17,16 @@ export default {
   name: 'Body',
   props: {
     msg: String
+  },
+  data: function() {
+    return {
+      vietname: 'a'
+    }
+  },
+  methods: {
+    toggleName() {
+      this.vietname =(this.vietname === 'a') ? 'ầ' : 'a';
+    }
   }
 }
 </script>
@@ -63,6 +73,6 @@ a {
 }
 
 a:hover {
-  color:rgb(255,255,0);
+  color:rgb(127,127,127);
 }
 </style>
