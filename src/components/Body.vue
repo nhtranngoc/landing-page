@@ -1,6 +1,6 @@
 <template>
   <div class="Body">
-  <p class="name" @click="toggleName"> Nam Tr{{vietname}}n </p>
+  <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
   <p class="tag"> Programmer, Hardware tinkerer, Maker and Consumer of food.</p>
   <div class="icons">
     <a class="icon" href="https://medium.com/@namtran_77878/" target="_blank" title="Blog"> <span class="fab fa-medium"></span> </a>

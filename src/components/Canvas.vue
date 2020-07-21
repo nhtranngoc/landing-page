@@ -6,8 +6,6 @@
 
 <script>
 
-import Victor from 'victor';
-
 export default {
     name: 'Canvas',
     data() {
@@ -16,7 +14,7 @@ export default {
             boids: [],
             visualRange: 70,
             food : {},
-            obstacle: {}
+            // obstacle: {}
         }
     },
     methods: {
@@ -26,8 +24,14 @@ export default {
             // Randomize flock
             for(var i = 0; i < this.boidSize; i++) {
                 this.boids.push({
-                    pos: new Victor(Math.floor(Math.random() * this.width), Math.floor(Math.random() * this.height)),
-                    dir: new Victor(Math.floor(Math.random() * 10) -5, Math.floor(Math.random() * 10) - 5),
+                    pos: {
+                        x : Math.floor(Math.random() * this.width),
+                        y : Math.floor(Math.random() * this.height)
+                    },
+                    dir: {
+                       x : Math.floor(Math.random() * 10) -5,
+                       y: Math.floor(Math.random() * 10) - 5
+                    },
                     r: Math.floor(Math.random() * 10) + 3
                 });
             }
@@ -36,12 +40,10 @@ export default {
             this.food = this.createNewFood();
 
             // Create obstacle, which is a circle centered on the canvas, which is where the main text box is
-            this.obstacle = {
-                pos: new Victor(this.width/2, this.height/2),
-                r: this.width/10
-            }
-
-            console.log(this.boids);
+            // this.obstacle = {
+            //     pos: new Victor(this.width/2, this.height/2),
+            //     r: this.width/10
+            // }
         },
         redraw: function() {
             let ctx = this.$refs.canvas.getContext('2d');
@@ -55,7 +57,8 @@ export default {
                 this.separation(boid);
                 this.limitSpeed(boid);
                 this.seek(boid, this.food.pos);
-                boid.pos = boid.pos.add(boid.dir);
+                boid.pos.x += boid.dir.x;
+                boid.pos.y += boid.dir.y;
                 // this.avoid(boid, this.obstacle)
                 // this.keepWithinBounds(boid);
                 this.drawBoid(boid.pos.x,boid.pos.y,boid.r,'rgb(200,10,10)');
@@ -74,47 +77,41 @@ export default {
         createNewFood : function() {
             return {
                 size: Math.floor(Math.random() * 15) + 5,
-                pos: new Victor(Math.floor(Math.random() * this.width), Math.floor(Math.random() * this.height))
+                pos: {
+                    x: Math.floor(Math.random() * this.width),
+                    y: Math.floor(Math.random() * this.height)
+                }
             }
         },
         drawBoid: function(x, y, r, c) {
             let ctx = this.$refs.canvas.getContext('2d');
             ctx.beginPath();
-            ctx.arc(x, y, r, 0, 2 * Math.PI);
+            ctx.arc(Math.floor(x), Math.floor(y), r, 0, 2 * Math.PI);
             ctx.fillStyle = c;
             ctx.fill();
             ctx.closePath();
         },
         collisionCheck : function(boid) {
-            // let newPos = boid.pos;
-
             if(boid.pos.x > this.width) {
-                // newPos.x = 0;
                 boid.pos.x = 0;
             } else if(boid.pos.x < 0) {
-                // newPos.x = this.width;
                 boid.pos.x = this.width;
             }
 
             if(boid.pos.y > this.height) {
-                // newPos.y = 0;
                 boid.pos.y = 0;
             } else if(boid.pos.y < 0) {
-                // newPos.y = this.height;
                 boid.pos.y = this.height;
             }
-            
-            // return newPos;
         },
         separation: function(boid) {
             const minDistance = 25;
             const avoidFactor = 0.005;
-            let move = new Victor(0,0);
-            // let newDir = boid.dir;
+            let move = {x: 0, y: 0};
 
             for(let otherBoid of this.boids) {
                 if(otherBoid !== boid) {
-                    let dist = boid.pos.distance(otherBoid.pos);
+                    let dist = this.distance(boid, otherBoid);
                     if(dist < minDistance) {
                         move.x += boid.pos.x - otherBoid.pos.x;
                         move.y += boid.pos.y - otherBoid.pos.y;
@@ -127,14 +124,14 @@ export default {
         },
         alignment: function(boid) {
             const matchingFactor = 0.0005;
-            let avgDir = new Victor();
-            // let newDir = boid.dir;
+            let avgDir = {x: 0, y: 0};
             let numNeighbors = 0;
 
             for(let otherBoid of this.boids) {
-                let dist = boid.pos.distance(otherBoid.pos);
+                let dist = this.distance(boid, otherBoid);
                 if(dist < this.visualRange && dist > 0) {
-                    avgDir = avgDir.add(otherBoid.dir);
+                    avgDir.x += otherBoid.dir.x;
+                    avgDir.y += otherBoid.dir.y;
                     numNeighbors += 1;
                 }
                 
@@ -150,13 +147,14 @@ export default {
         cohesion: function(boid) {
             const centeringFactor = 0.00001;
 
-            let center = new Victor(0,0);
+            let center = {x: 0, y: 0};
             let numNeighbors = 0;
 
             for(let otherBoid of this.boids) {
-                let dist = boid.pos.distance(otherBoid.pos);
+                let dist = this.distance(boid, otherBoid);
                 if(dist < this.visualRange) {
-                    center = center.add(otherBoid.pos);
+                    center.x += otherBoid.pos.x;
+                    center.y += otherBoid.pos.y
                     numNeighbors += 1;
                 }
 
@@ -185,21 +183,21 @@ export default {
             boid.dir.x += (pos.x - boid.pos.x) * seekFactor;
             boid.dir.y += (pos.y - boid.pos.y) * seekFactor;
         },
-        avoid: function(boid, object) {
-            const avoidFactor = 0.00005;
-            let ahead = new Victor();
-            let norm = boid.dir.normalize();
-            ahead.x = boid.pos.x + norm.x * this.visualRange;
-            ahead.y = boid.pos.y + norm.y * this.visualRange;
+        // avoid: function(boid, object) {
+        //     const avoidFactor = 0.00005;
+        //     let ahead = new Victor();
+        //     let norm = boid.dir.normalize();
+        //     ahead.x = boid.pos.x + norm.x * this.visualRange;
+        //     ahead.y = boid.pos.y + norm.y * this.visualRange;
 
-            let avoidanceForce = new Victor();
-            avoidanceForce.x = ahead.x - object.pos.x;
-            avoidanceForce.y = ahead.y - object.pos.y;
-            norm  = avoidanceForce.normalize();
+        //     let avoidanceForce = new Victor();
+        //     avoidanceForce.x = ahead.x - object.pos.x;
+        //     avoidanceForce.y = ahead.y - object.pos.y;
+        //     norm  = avoidanceForce.normalize();
 
-            boid.dir.x += norm.x * avoidFactor;
-            boid.dir.y += norm.y * avoidFactor;
-        },
+        //     boid.dir.x += norm.x * avoidFactor;
+        //     boid.dir.y += norm.y * avoidFactor;
+        // },
         keepWithinBounds : function(boid) {
             const margin = 200;
             const turnFactor = 1;
@@ -219,6 +217,11 @@ export default {
             if(boid.pos.y > this.height - margin) {
                 boid.pos.y -= turnFactor;
             }
+        },
+        distance : function(boida, boidb) {
+            return Math.sqrt(
+                (boida.pos.x - boidb.pos.x) * (boida.pos.x - boidb.pos.x) + 
+                (boida.pos.y - boidb.pos.y) * (boida.pos.y - boidb.pos.y));
         }
     },
     props: {
