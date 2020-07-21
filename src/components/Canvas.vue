@@ -14,6 +14,7 @@ export default {
             boids: [],
             visualRange: 70,
             food : {},
+            colors : ['#e63946', '#a8dadc', '#457b9d']
             // obstacle: {}
         }
     },
@@ -32,7 +33,8 @@ export default {
                        x : Math.floor(Math.random() * 10) -5,
                        y: Math.floor(Math.random() * 10) - 5
                     },
-                    r: Math.floor(Math.random() * 10) + 3
+                    r: Math.floor(Math.random() * 10) + 3,
+                    c : this.colors[i % 3]
                 });
             }
 
@@ -61,7 +63,7 @@ export default {
                 boid.pos.y += boid.dir.y;
                 // this.avoid(boid, this.obstacle)
                 // this.keepWithinBounds(boid);
-                this.drawBoid(boid.pos.x,boid.pos.y,boid.r,'rgb(200,10,10)');
+                this.drawBoid(boid.pos.x,boid.pos.y,boid.r, boid.c);
             }
 
             // Calculate and draw food source
@@ -246,6 +248,6 @@ export default {
 #canvas {
     position: absolute;
     z-index: 1;
-    background-color: #f2ebeb;
+    background-color: #1d3557;
 }
 </style>

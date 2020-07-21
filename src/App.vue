@@ -42,7 +42,7 @@ export default {
 
 <style>
 html {
-  background-color: #f2ebeb;
+  background-color: #1d3557;
 }
 
 #app {

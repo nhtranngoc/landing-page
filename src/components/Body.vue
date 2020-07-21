@@ -1,20 +1,20 @@
 <template>
   <div class="Body">
   <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
-  <p class="tag"> Programmer, Hardware tinkerer, Maker and Consumer of food.</p>
-  <div class="icons">
-    <a class="icon" href="https://medium.com/@namtran_77878/" target="_blank" title="Blog"> <span class="fab fa-medium"></span> </a>
-    <a class="icon" href="https://www.linkedin.com/in/nhtranngoc" target="_blank" title="LinkedIn"> <span class="fab fa-linkedin"></span> </a>
-    <a class="icon" href="https://github.com/nhtranngoc/" target="_blank" title="GitHub"> <span class="fab fa-github-alt"></span> </a>
-  </div>
+  <p class="tag"> Programmer, Hardware Tinkerer, Maker, and Consumer of Food.</p>
+  <Link />
   </div>
 </template>
 
 <script>
+import Link from './Link';
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 export default {
   name: 'Body',
+  components: {
+    Link
+  },
   props: {
     msg: String
   },
@@ -44,36 +44,12 @@ export default {
   transform: translateY(-50%);
   font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+  color: #f1faee;
 }
 
 .name {
   font-size: 8vw;
   margin: 0;
   padding: 0;
-}
-
-.icons {
-  margin-top: 0.2rem;
-  font-size: 0;
-}
-
-.icon {
-  display: inline-block;
-  border: 0.04rem solid;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-  margin-right: 0.5rem;
-  font-size: 1rem !important;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color:rgb(127,127,127);
 }
 </style>
