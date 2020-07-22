@@ -1,19 +1,19 @@
 <template>
   <div class="Body">
   <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
-  <p class="tag"> Programmer, Hardware Tinkerer, Maker, and Consumer of Food.</p>
-  <Link />
+  <!-- <p class="tag"> Programmer, Hardware Tinkerer, Maker, and Consumer of Food.</p> -->
+  <NavBar />
   </div>
 </template>
 
 <script>
-import Link from './Link';
+import NavBar from './NavBar'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 export default {
   name: 'Body',
   components: {
-    Link
+    NavBar,
   },
   props: {
     msg: String
