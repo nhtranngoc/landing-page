@@ -22,7 +22,7 @@ export default {
             window.requestAnimationFrame(this.redraw);
 
             // Randomize flock
-            const boidSize = 15;
+            const boidSize = 13;
             for(var i = 0; i < boidSize; i++) {
                 this.boids.push({
                     pos: {
