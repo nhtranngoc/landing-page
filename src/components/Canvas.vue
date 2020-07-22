@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'Canvas',
     data() {
@@ -22,7 +21,7 @@ export default {
             window.requestAnimationFrame(this.redraw);
 
             // Randomize flock
-            const boidSize = 20;
+            const boidSize = (this.$isMobile()) ? 8 : 20;
             if(this.once) {
                 for(var i = 0; i < boidSize; i++) {
                     this.boids.push({
@@ -31,8 +30,8 @@ export default {
                             y : Math.floor(Math.random() * this.height)
                         },
                         dir: {
-                        x : Math.floor(Math.random() * 10) -5,
-                        y: Math.floor(Math.random() * 10) - 5
+                        x : Math.floor(Math.random() * 5) -2.5,
+                        y: Math.floor(Math.random() * 5) - 2.5
                         },
                         r: Math.floor(Math.random() * 10) + 3,
                         c : this.colors[i % 3]
@@ -107,7 +106,7 @@ export default {
         },
         separation: function(boid) {
             const minDistance = 25;
-            const avoidFactor = 0.005;
+            const avoidFactor = 0.004;
             let move = {x: 0, y: 0};
 
             for(let otherBoid of this.boids) {
@@ -124,7 +123,7 @@ export default {
             boid.dir.y += move.y * avoidFactor;
         },
         alignment: function(boid) {
-            const matchingFactor = 0.0005;
+            const matchingFactor = 0.0004;
             let avgDir = {x: 0, y: 0};
             let numNeighbors = 0;
 
@@ -146,7 +145,7 @@ export default {
             }
         },
         cohesion: function(boid) {
-            const centeringFactor = 0.00001;
+            const centeringFactor = 0.000005;
 
             let center = {x: 0, y: 0};
             let numNeighbors = 0;
