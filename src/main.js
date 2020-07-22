@@ -1,11 +1,25 @@
 import Vue from 'vue'
-import App from './App.vue'
-
 import VueMobileDetection from 'vue-mobile-detection';
-Vue.use(VueMobileDetection);
+import VueRouter from 'vue-router';
 
+import App from './App.vue';
+import Home from './Home.vue';
+import About from './About.vue';
+
+Vue.use(VueMobileDetection);
+Vue.use(VueRouter);
 Vue.config.productionTip = false
 
+const routes = [
+  {path: '/', component: Home},
+  {path: '/about', component: About}
+];
+
+const router = new VueRouter({
+  routes
+});
+
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: h => h(App)
+}).$mount('#app');

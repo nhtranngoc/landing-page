@@ -1,10 +1,10 @@
 <template>
     <div class="nav">
         <ul>
-        <li class="nav-section"><a class="nav-link" href="/about" title="About me">About</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/hireme" title="I'm open for hiring!">Hire Me</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/projects" title="My projects">Projects</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/about" title="What's all this?">Animation?</a></li>
+        <li class="nav-section"><router-link class="nav-link" to="/about" title="About me">About</router-link></li> |
+        <li class="nav-section"><router-link class="nav-link" to="/hireme" title="I'm open for hiring!">Hire Me</router-link></li> |
+        <li class="nav-section"><router-link class="nav-link" to="/projects" title="My projects">Projects</router-link></li> |
+        <li class="nav-section"><router-link class="nav-link" to="/about" title="What's all this?">Animation?</router-link></li>
         </ul>
     </div>
 </template>

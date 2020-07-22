@@ -20,6 +20,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-mobile-detection": "^1.0.0",
+    "vue-router": "^3.3.4",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
