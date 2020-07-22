@@ -10,7 +10,6 @@ export default {
     name: 'Canvas',
     data() {
         return {
-            boidSize: 17,
             boids: [],
             visualRange: 70,
             food : {},
@@ -23,7 +22,8 @@ export default {
             window.requestAnimationFrame(this.redraw);
 
             // Randomize flock
-            for(var i = 0; i < this.boidSize; i++) {
+            const boidSize = 15;
+            for(var i = 0; i < boidSize; i++) {
                 this.boids.push({
                     pos: {
                         x : Math.floor(Math.random() * this.width),
@@ -57,12 +57,11 @@ export default {
                 this.cohesion(boid);
                 this.alignment(boid);
                 this.separation(boid);
-                this.limitSpeed(boid);
                 this.seek(boid, this.food.pos);
                 boid.pos.x += boid.dir.x;
                 boid.pos.y += boid.dir.y;
                 // this.avoid(boid, this.obstacle)
-                // this.keepWithinBounds(boid);
+                this.limitSpeed(boid);
                 this.drawBoid(boid.pos.x,boid.pos.y,boid.r, boid.c);
             }
 
@@ -94,7 +93,7 @@ export default {
             ctx.closePath();
         },
         collisionCheck : function(boid) {
-            const frictionFactor = 0.1;
+            const frictionFactor = 0.5;
             if(boid.pos.x > this.width) {
                 boid.dir.x -= frictionFactor;
                 boid.pos.x = 0;
@@ -102,7 +101,7 @@ export default {
                 boid.dir.x -= frictionFactor;
                 boid.pos.x = this.width;
             }
-
+// 
             if(boid.pos.y > this.height) {
                 boid.dir.y -= frictionFactor;
                 boid.pos.y = 0;
@@ -175,7 +174,7 @@ export default {
             }
         },
         limitSpeed : function(boid) {
-            const speedLimit = 3.5;
+            const speedLimit = 1.2;
 
             const speed = Math.sqrt(boid.dir.x * boid.dir.x + boid.dir.y + boid.dir.y);
 
@@ -205,26 +204,6 @@ export default {
         //     boid.dir.x += norm.x * avoidFactor;
         //     boid.dir.y += norm.y * avoidFactor;
         // },
-        keepWithinBounds : function(boid) {
-            const margin = 200;
-            const turnFactor = 1;
-
-            if(boid.pos.x < margin) {
-                boid.dir.x += turnFactor;
-            }
-            
-            if(boid.pos.x > this.width - margin) {
-                boid.dir.x -= turnFactor;
-            }
-
-            if(boid.pos.y < margin) {
-                boid.dir.x += turnFactor;
-            }
-
-            if(boid.pos.y > this.height - margin) {
-                boid.pos.y -= turnFactor;
-            }
-        },
         distance : function(boida, boidb) {
             return Math.sqrt(
                 (boida.pos.x - boidb.pos.x) * (boida.pos.x - boidb.pos.x) + 
