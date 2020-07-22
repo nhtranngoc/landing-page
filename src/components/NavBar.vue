@@ -2,9 +2,9 @@
     <div class="nav">
         <ul>
         <li class="nav-section"><a class="nav-link" href="/about" title="About me">About</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/hireme" title="About me">Hire Me</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/projects" title="About me">Projects</a></li> |
-        <li class="nav-section"><a class="nav-link" href="/about" title="About me">Animation?</a></li>
+        <li class="nav-section"><a class="nav-link" href="/hireme" title="I'm open for hiring!">Hire Me</a></li> |
+        <li class="nav-section"><a class="nav-link" href="/projects" title="My projects">Projects</a></li> |
+        <li class="nav-section"><a class="nav-link" href="/about" title="What's all this?">Animation?</a></li>
         </ul>
     </div>
 </template>

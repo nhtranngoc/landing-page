@@ -23,7 +23,7 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
     z-index: 2;
     font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
