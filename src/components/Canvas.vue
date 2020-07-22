@@ -11,10 +11,10 @@ export default {
     data() {
         return {
             boids: [],
+            once: true,
             visualRange: 70,
             food : {},
             colors : ['#e63946', '#a8dadc', '#457b9d']
-            // obstacle: {}
         }
     },
     methods: {
@@ -22,30 +22,28 @@ export default {
             window.requestAnimationFrame(this.redraw);
 
             // Randomize flock
-            const boidSize = 13;
-            for(var i = 0; i < boidSize; i++) {
-                this.boids.push({
-                    pos: {
-                        x : Math.floor(Math.random() * this.width),
-                        y : Math.floor(Math.random() * this.height)
-                    },
-                    dir: {
-                       x : Math.floor(Math.random() * 10) -5,
-                       y: Math.floor(Math.random() * 10) - 5
-                    },
-                    r: Math.floor(Math.random() * 10) + 3,
-                    c : this.colors[i % 3]
-                });
+            const boidSize = 20;
+            if(this.once) {
+                for(var i = 0; i < boidSize; i++) {
+                    this.boids.push({
+                        pos: {
+                            x : Math.floor(Math.random() * this.width),
+                            y : Math.floor(Math.random() * this.height)
+                        },
+                        dir: {
+                        x : Math.floor(Math.random() * 10) -5,
+                        y: Math.floor(Math.random() * 10) - 5
+                        },
+                        r: Math.floor(Math.random() * 10) + 3,
+                        c : this.colors[i % 3]
+                    });
+                }
+                this.once = false;
             }
+            
 
             // Create food source
             this.food = this.createNewFood();
-
-            // Create obstacle, which is a circle centered on the canvas, which is where the main text box is
-            // this.obstacle = {
-            //     pos: new Victor(this.width/2, this.height/2),
-            //     r: this.width/10
-            // }
         },
         redraw: function() {
             let ctx = this.$refs.canvas.getContext('2d');
@@ -53,15 +51,16 @@ export default {
 
             // Main boid frame here
             for(let boid of this.boids) {
-                this.collisionCheck(boid);
+                
                 this.cohesion(boid);
                 this.alignment(boid);
                 this.separation(boid);
                 this.seek(boid, this.food.pos);
+                this.limitSpeed(boid);
+                this.collisionCheck(boid);
+
                 boid.pos.x += boid.dir.x;
                 boid.pos.y += boid.dir.y;
-                // this.avoid(boid, this.obstacle)
-                this.limitSpeed(boid);
                 this.drawBoid(boid.pos.x,boid.pos.y,boid.r, boid.c);
             }
 
@@ -77,7 +76,7 @@ export default {
         },
         createNewFood : function() {
             return {
-                size: Math.floor(Math.random() * 15) + 5,
+                size: Math.floor(Math.random() * 10) + 5,
                 pos: {
                     x: Math.floor(Math.random() * this.width),
                     y: Math.floor(Math.random() * this.height)
@@ -93,20 +92,16 @@ export default {
             ctx.closePath();
         },
         collisionCheck : function(boid) {
-            const frictionFactor = 0.5;
             if(boid.pos.x > this.width) {
-                boid.dir.x -= frictionFactor;
                 boid.pos.x = 0;
             } else if(boid.pos.x < 0) {
-                boid.dir.x -= frictionFactor;
                 boid.pos.x = this.width;
             }
-// 
+ 
             if(boid.pos.y > this.height) {
-                boid.dir.y -= frictionFactor;
                 boid.pos.y = 0;
             } else if(boid.pos.y < 0) {
-                boid.dir.y -= frictionFactor;
+
                 boid.pos.y = this.height;
             }
         },
@@ -174,7 +169,7 @@ export default {
             }
         },
         limitSpeed : function(boid) {
-            const speedLimit = 1.2;
+            const speedLimit = 2.7;
 
             const speed = Math.sqrt(boid.dir.x * boid.dir.x + boid.dir.y + boid.dir.y);
 
@@ -189,21 +184,6 @@ export default {
             boid.dir.x += (pos.x - boid.pos.x) * seekFactor;
             boid.dir.y += (pos.y - boid.pos.y) * seekFactor;
         },
-        // avoid: function(boid, object) {
-        //     const avoidFactor = 0.00005;
-        //     let ahead = new Victor();
-        //     let norm = boid.dir.normalize();
-        //     ahead.x = boid.pos.x + norm.x * this.visualRange;
-        //     ahead.y = boid.pos.y + norm.y * this.visualRange;
-
-        //     let avoidanceForce = new Victor();
-        //     avoidanceForce.x = ahead.x - object.pos.x;
-        //     avoidanceForce.y = ahead.y - object.pos.y;
-        //     norm  = avoidanceForce.normalize();
-
-        //     boid.dir.x += norm.x * avoidFactor;
-        //     boid.dir.y += norm.y * avoidFactor;
-        // },
         distance : function(boida, boidb) {
             return Math.sqrt(
                 (boida.pos.x - boidb.pos.x) * (boida.pos.x - boidb.pos.x) + 
