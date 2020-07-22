@@ -145,7 +145,7 @@ export default {
             }
         },
         cohesion: function(boid) {
-            const centeringFactor = 0.000005;
+            const centeringFactor = 0.000001;
 
             let center = {x: 0, y: 0};
             let numNeighbors = 0;
