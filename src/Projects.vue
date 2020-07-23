@@ -7,14 +7,12 @@
             <div class="category"><router-link to="/projects/misc">Misc</router-link></div>
             <div class="category"><router-link to="/projects/concepts">Concepts</router-link></div>
         </div>
-        <Footer />
         <router-view></router-view>
     </div>
 </template>
 
 <script>
 import TopBar from './components/TopBar.vue';
-import Footer from './components/Footer.vue';
 
 export default {
     data() {
@@ -26,7 +24,6 @@ export default {
     },
     components: {
         TopBar,
-        Footer
     }
 }
 </script>
@@ -46,6 +43,7 @@ export default {
     margin-bottom: 1.5em;
     position: relative;
     font-size: 160%;
+    font-family: 'Arsenal';
     max-width: 20%;
     height: 100%;
 }

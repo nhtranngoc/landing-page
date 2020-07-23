@@ -15,14 +15,12 @@
             <p> I also have a GitHub page <a href="https://github.com/nhtranngoc">@nhtranngoc</a> where I put all my silly projects.</p>
 
         </div>
-        <Footer />
         <router-view></router-view>
     </div>
 </template>
 
 <script>
 import TopBar from './components/TopBar.vue';
-import Footer from './components/Footer.vue';
 
 export default {
     data() {
@@ -33,8 +31,7 @@ export default {
         }
     },
     components: {
-        TopBar,
-        Footer
+        TopBar
     }
 }
 </script>

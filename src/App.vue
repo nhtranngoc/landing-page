@@ -1,8 +1,19 @@
 <template>
   <div>
+    <Footer />
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+import Footer from './components/Footer.vue'
+
+export default {
+  components: {
+    Footer
+  }
+}
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");

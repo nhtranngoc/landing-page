@@ -23,7 +23,6 @@
             <p>If you want to learn more about me, check out my <router-link to="/about"> About</router-link> page, or see my <router-link to="/projects">Projects</router-link>.</p>
             <p>If you want to see my skills and background in a neat looking one-page document, here is a copy of my <a href="https://www.dropbox.com/s/9dgllxi4trqdd29/NamTran_Resume.pdf?dl=1">Resume</a>.</p>
         </div>
-        <Footer />
         <router-view></router-view>
     </div>
 </template>
@@ -31,7 +30,6 @@
 <script>
 import TopBar from './components/TopBar.vue';
 import Countdown from './components/Countdown.vue';
-import Footer from './components/Footer';
 
 export default {
     data() {
@@ -44,7 +42,6 @@ export default {
     components: {
         TopBar,
         Countdown,
-        Footer
     }
 }
 </script>

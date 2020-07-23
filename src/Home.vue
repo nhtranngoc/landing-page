@@ -3,14 +3,12 @@
     <Body />
     <Canvas ref="canvasComponent" :width="canvasWidth" :height="canvasHeight"/>
     <Link class="link"/>
-    <Footer />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Body from './components/Body.vue'
-import Footer from './components/Footer.vue'
 import Canvas from './components/Canvas.vue'
 import Link from './components/Link.vue'
 
@@ -25,8 +23,7 @@ export default {
   components: {
     Body,
     Canvas,
-    Link,
-    Footer
+    Link
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
