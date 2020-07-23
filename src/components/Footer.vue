@@ -1,19 +1,8 @@
 <template>
     <div>
-        <Link class="link"/>
         <div> © 2020. Built with VueJS and duct tape. </div>
     </div>
 </template>
-
-<script>
-import Link from './Link';
-
-export default {
-    components: {
-        Link
-    }
-}
-</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Arsenal&display=swap");
@@ -27,9 +16,5 @@ export default {
     text-align: center;
     font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #f1faee;
-}
-
-.link {
-    margin-bottom: 1.8rem;
 }
 </style>
