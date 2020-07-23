@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TopBar heading="About me"/>
+        <TopBar :nav="nav"/>
         <img id="headshot" src="../public/headshot.jpg">
         <div class="paragraph">
             <p>
@@ -25,6 +25,13 @@ import TopBar from './components/TopBar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
+    data() {
+        return {
+            nav : [
+                {link: 'about', heading: "About me"},
+            ]
+        }
+    },
     components: {
         TopBar,
         Footer

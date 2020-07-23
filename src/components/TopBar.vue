@@ -1,17 +1,21 @@
 <template>
     <div id="container">
         <router-link to="/" id="home"><span class="fas fa-home"></span></router-link>
-        <div id="heading">| {{heading}} </div>
+        <!-- <div class="divider">|</div><router-link :to="'/' + this.nav[0].link" id="heading">{{this.nav[0].heading}} </router-link> -->
+        <div v-for="item in nav" :key="item.link">
+            <div class="divider">></div>
+            <router-link :to="'/' + item.link" id="heading">{{item.heading}} </router-link>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        heading: {
-            type: String,
+        nav: {
+            type: Array,
             required: true
-        }
+        },
     }
 }
 </script>
@@ -22,6 +26,9 @@ export default {
 * {
     display: inline-block;
     font-family: 'Arsenal';
+    text-decoration: none;
+    color: #f1faee;
+    margin-right: 0.2em;
 }
 
 #container {
@@ -33,17 +40,16 @@ export default {
 }
 
 #home {
-    color: #f1faee;
     height: 100%;
     font-size: 1.5em;
-    margin-right: 0.4em;
 }
 
-#home:hover {
-    color: #457b9d;
+#home:hover, a:hover {
+    color: #457b9d !important;
 }
 
-#heading {
+#heading , .divider {
+
     font-size: 2.5em;
 }
 </style>

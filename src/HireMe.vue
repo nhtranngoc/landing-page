@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TopBar heading="Hire Me" />
+        <TopBar :nav="nav" />
         <Countdown />
         <div class="paragraph">
             <!-- <h1>This countdown will stop on September 1st, 2020.</h1> -->
@@ -34,6 +34,13 @@ import Countdown from './components/Countdown.vue';
 import Footer from './components/Footer';
 
 export default {
+    data() {
+        return{
+            nav: [
+                {link: 'hireme', heading: 'Hire Me'}
+            ] 
+        }
+    },
     components: {
         TopBar,
         Countdown,

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TopBar heading="Projects" />
+        <TopBar :nav="nav" />
         <Footer />
         <router-view></router-view>
     </div>
@@ -11,6 +11,13 @@ import TopBar from './components/TopBar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
+    data() {
+        return {
+            nav : [
+                {link: "projects", heading: "Projects"}
+            ]
+        }
+    },
     components: {
         TopBar,
         Footer
