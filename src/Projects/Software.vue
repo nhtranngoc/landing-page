@@ -27,7 +27,7 @@ export default {
                 {
                     name: 'Landing Page',
                     tech: 'VueJS, lots of hardcoded components',
-                    img: 'https://raw.githubusercontent.com/nhtranngoc/landing-page/master/screenshot.png',
+                    img: 'https://raw.githubusercontent.com/nhtranngoc/landing-page/master/screenshot.PNG',
                     completed: 'In Progress',
                     link: 'https://namfromnam.com',
                     tag: 'An riddle, wrapped up in an enigma.'
