@@ -1,7 +1,6 @@
 <template>
     <div id="container">
         <router-link to="/" id="home"><span class="fas fa-home"></span></router-link>
-        <!-- <div class="divider">|</div><router-link :to="'/' + this.nav[0].link" id="heading">{{this.nav[0].heading}} </router-link> -->
         <div v-for="item in nav" :key="item.link">
             <div class="divider">></div>
             <router-link :to="'/' + item.link" id="heading">{{item.heading}} </router-link>

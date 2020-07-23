@@ -1,7 +1,6 @@
 <template>
   <div class="Body">
   <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
-  <!-- <p class="tag"> Programmer, Hardware Tinkerer, Maker, and Consumer of Food.</p> -->
   <NavBar />
   </div>
 </template>
