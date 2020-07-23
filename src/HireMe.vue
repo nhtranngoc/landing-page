@@ -11,7 +11,7 @@
             <p>Unfortunately, with COVID-19 and the current state of the job market, I have not had any luck finding a job. When the timer hits zero, I will have to be forced to leave the US, a country I spent the last 7 years living in.</p>
             <p>So I built this website. Partly because I like building things, and making nice looking simulation toys that I can spend hours looking at - but mostly because I want to get my name out there. In this highly competitive job market, a little bit of self-marketing can go a long way.</p>
             <h1>What I am capable of</h1>
-            <p>I graduated from Worcester Polytechnic Institute, with a B.S. in Robotics Engineering and Electrical & Computer Engineering, and a minor in Computer Science. </p>
+            <p>I have a B.S. in Robotics Engineering and Electrical & Computer Engineering, and a minor in Computer Science. </p>
             <p>I have experience in software engineering, ranging from embedded systems to web development. I am proficient in C/C++, and have worked on a multitude of microcontrollers such as ARM, AVR, ESP8266/32, and MSP. I can program autonomous robots in Python, using Robotics Operating Systems (ROS). I can work on full-stack website - as a matter of fact, NamFromNam.com was built from scratch, using VueJS.</p>
             <p>I have experience in electrical engineering. I can design PCBs in EAGLE and KiCAD. I can program FPGAs in Verilog. I know my way around oscilloscopes and logic analyzers, and I am handy with a soldering iron.</p>
             <h1>What I am looking for</h1>
