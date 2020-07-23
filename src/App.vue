@@ -27,7 +27,7 @@ export default {
     margin-bottom: 15%;
 }
 
-p, h1, a{
+p, h1, a, .text{
     z-index: 2;
     color: #f1faee;
     font-size: 110%;
