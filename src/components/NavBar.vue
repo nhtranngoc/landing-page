@@ -4,7 +4,7 @@
         <li class="nav-section"><router-link class="nav-link" to="/about" title="About me">About</router-link></li> |
         <li class="nav-section"><router-link class="nav-link" to="/hireme" title="I'm open for hiring!">Hire Me</router-link></li> |
         <li class="nav-section"><router-link class="nav-link" to="/projects" title="My projects">Projects</router-link></li> |
-        <li class="nav-section"><router-link class="nav-link" to="/about" title="What's all this?">Animation?</router-link></li>
+        <li class="nav-section"><router-link class="nav-link" to="/about" title="What's all this?">What's This?</router-link></li>
         </ul>
     </div>
 </template>

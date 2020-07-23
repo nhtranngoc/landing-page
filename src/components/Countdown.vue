@@ -71,11 +71,12 @@ export default {
 #container {
     display: block;
     margin-top: 1em;
-    margin-left: auto;
+    margin-left: 30%;
     margin-right: auto;
     width: 50%;
     padding: 0;
     color: #f1faee;
+    font-family: 'Roboto';
 }
 
 .countdown {
@@ -90,6 +91,6 @@ export default {
 }
 
 .text {
-    font-size: 150%;
+    font-size: 110%;
 }
 </style>
