@@ -3,17 +3,12 @@
         <TopBar :nav="nav"/>
         <img id="headshot" src="../public/headshot.jpg">
         <div class="paragraph">
-            <p>
-                NamFromNam is a collection of loose wires and duct tape masquerading as a website, built by an even looser collection of wires and coffee known as Nam Tran.
-            </p>
-            <p>
-                In my spare time, I enjoy picking up new hobbies which include cooking, baking, brewing, programming, gardening, woodworking, and crocheting.
-            </p>
+            <p>NamFromNam is a collection of loose wires and duct tape masquerading as a website, built by an even looser collection of wires and coffee known as Nam Tran.</p>
+            <p>In my spare time, I enjoy picking up new hobbies which include cooking, baking, brewing, programming, gardening, woodworking, and crocheting.</p>
 
             <h1> Contact Info </h1>
             <p> My email is highly classified, and is in no way, shape, or form <a href="mailto:nam@namfromnam.com">nam@namfromnam.com</a></P>
             <p> I also have a GitHub page <a href="https://github.com/nhtranngoc">@nhtranngoc</a> where I put all my silly projects.</p>
-
         </div>
         <router-view></router-view>
     </div>
