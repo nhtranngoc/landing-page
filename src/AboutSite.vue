@@ -10,7 +10,7 @@
 
         <h1> Easter Egg </h1>
         <p>I had people asking me if the weird marks on top of the "a" in "Tran" is a bug. Unfortunately, it isn't. Much as how Germanic languages have the ever elusive umlauts (the ä, ö, and ü), Vietnamese language has its own quirks.</p> 
-        <p>In an attempt to make my name accessible to Western audience, I anglicized my name by taking out the accent marks. But for I am a greedy person, I like to leave a mark (no pun intended) of my heritage on my website, so a compromise was made.</p>
+        <p>In an attempt to make my name accessible to Western audience, I anglicized my name by taking out the accent marks. But I am a greedy person, so I like to leave a mark (no pun intended) of my heritage on my website, so a compromise was made.</p>
         <p>In short, no, that was not a bug. If you truly feel the need to know my name in all of its accented glory, it is "Trần Ngọc Hoàng Nam", loosely translated to Naked Jade Emperor of 'Nam. My parents have quite a way with words, I know.</p>
         </div>
         <router-view></router-view>
