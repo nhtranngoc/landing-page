@@ -2,7 +2,6 @@
     <div>
         <TopBar :nav="nav"/>
         <div class="paragraph">
-        <h1> About this site </h1>
         <p>This website stems primarily from a need for a job by yours truly. But I also realized that I have never had a centralized portfolio for all of my projects. So there it is, the lengthy history of how this site came to be.</p>
 
         <p>The little flying circles on the home page are a part of something called "boids". "Boids" is pronounced exactly how you would pronounce "birds", if you are a cranky New Yorker. Boid is an algorithm for simulating flock behavior, and it is absolutely fascinating to watch. I'll let my friend Destin and Ben Eater explain it better than I do.</p>
@@ -36,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-#player {
+#video {
     display: block;
     margin-left: auto;
     margin-right: auto;
