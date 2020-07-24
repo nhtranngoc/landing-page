@@ -123,7 +123,7 @@ export default {
                 {
                     name: 'Guitar Hero clone on MSP430',
                     tech: 'C, MSP430',
-                    img: 'https://in.element14.com/productimages/large/en_GB/texasinstruments-msp-exp430g2-40.jpg',
+                    img: 'https://i.imgur.com/budx9kS.png',
                     link: 'https://github.com/nhtranngoc/ECE2049_Lab2',
                     completed: 'Completed',
                     tag: 'For ECE2049 at WPI. Programmed a rudimentary, 16-bit clone of Guitar Hero. Surprisingly fun with Mario\'s Underwater theme playing.'
