@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueMobileDetection from 'vue-mobile-detection';
 import VueRouter from 'vue-router';
+import VueAnalytics from 'vue-analytics';
 
 import App from './App.vue';
 import Home from './Home.vue';
@@ -24,17 +25,25 @@ const routes = [
   {path: '/site', component: AboutSite},
   {path: '/hireme', component: HireMe},
   {path: '/projects', component: Projects},
-    {path: '/projects/software', component: Software},
+  {path: '/projects/software', component: Software},
     {path: '/projects/hardware', component: Hardware},
     {path: '/projects/misc', component: Misc},
     {path: '/projects/concepts', component: Concepts},
-];
-
-const router = new VueRouter({
-  routes
-});
-
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app');
+  ];
+  
+  const router = new VueRouter({
+    routes
+  });
+  
+  Vue.use(VueAnalytics, {
+    id: 'UA-173494737-1',
+    router,
+    autoTracking : {
+      screenview: true
+    }
+  });
+  
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount('#app');
