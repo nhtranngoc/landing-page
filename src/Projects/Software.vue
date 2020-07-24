@@ -30,7 +30,7 @@ export default {
                     img: 'https://raw.githubusercontent.com/nhtranngoc/landing-page/master/screenshot.PNG',
                     completed: 'In Progress',
                     link: 'https://namfromnam.com',
-                    tag: 'An riddle, wrapped up in an enigma.'
+                    tag: 'A riddle, wrapped up in an enigma.'
                 },
                 {
                     name: 'Yet Another CHIP-8 Emulator',
