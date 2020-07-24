@@ -68,11 +68,18 @@ export default {
                     name: 'Gregify Chrome Extension',
                     tech: 'JavaScript, RegEx',
                     img: 'https://lh3.googleusercontent.com/zg_kim4BIx5AOur2A5tpNpx0LRxsk7oUhu1sbszjI6n73B0xObrMnvQTRwxTe0d1pRJtDCQuXA=w640-h400-e365',
-                    completed: 'Unfortunately completed',
+                    completed: 'Regretfully completed',
                     link: 'https://chrome.google.com/webstore/detail/gregify/ihjcfigbnjeiboinlfhgmicgodmpolbh?hl=en',
                     tag: 'A blight upon the world, Gregify will turn any pronouns on your browser into Greg. Inspired by a Reddit thread. As of this time, there are 14 users. God bless their souls.'
-
-                }
+                },
+                {
+                    name: 'libopencm3_cmake',
+                    tech: 'CMake',
+                    img: 'https://avatars0.githubusercontent.com/u/1656279?s=200&v=4',
+                    completed: 'Completed',
+                    link: 'https://github.com/nhtranngoc/libopencm3_cmake',
+                    tag: 'Boilerplate CMake files for libopencm3, an open source low-level hardware library for ARM microcontrollers.'
+                },
             ]
         }
     }

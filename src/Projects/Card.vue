@@ -59,7 +59,12 @@ img:hover {
 
 #name {
     font-size: 150%;
+    border-bottom: 1px solid #fff;
     color: #e46c76;
+}
+
+#tech {
+    margin-bottom: 1.3em;
 }
 
 </style>
