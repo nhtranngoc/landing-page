@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueMobileDetection from 'vue-mobile-detection';
 import VueRouter from 'vue-router';
-import VueAnalytics from 'vue-analytics';
+import VueGtag from 'vue-gtag';
 
 import App from './App.vue';
 import Home from './Home.vue';
@@ -35,13 +35,11 @@ const routes = [
     routes
   });
   
-  Vue.use(VueAnalytics, {
-    id: 'UA-173494737-1',
-    router,
-    autoTracking : {
-      screenview: true
-    }
-  });
+  Vue.use(VueGtag, {
+    config: {id: 'UA-173494737-1'},
+    appName: 'namfromnam',
+    pageTrackerScreenviewEnableD: true
+  }, router);
   
   new Vue({
     router,
