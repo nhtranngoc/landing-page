@@ -15,7 +15,7 @@
             <p>I have experience in software engineering, ranging from embedded systems to web development. I am proficient in C/C++, and have worked on a multitude of microcontrollers such as ARM, AVR, ESP8266/32, and MSP. I can program autonomous robots in Python, using Robotics Operating Systems (ROS). I can work on full-stack website - as a matter of fact, NamFromNam.com was built from scratch, using VueJS.</p>
             <p>I have experience in electrical engineering. I can design PCBs in EAGLE and KiCAD. I can program FPGAs in Verilog. I know my way around oscilloscopes and logic analyzers, and I am handy with a soldering iron.</p>
             <h1>What I am looking for</h1>
-            <p>I am most interested in an entry-level position in the embedded systems industry. Beggars can't be choosers, and failing that, I would be delighted to work on any job that is relevant to my experience. I'm open to, and I love to learn new things.</p>
+            <p>I am most interested in an entry-level position in the embedded systems industry. However, I would be delighted to work on any job that is relevant to my experience. I'm open to, and I love to learn new things.</p>
             <p>I am open for any full-time, part-time, internship, and contract positions coming my way. My work authorization requires a minimum of 20 hours of work per week, and it has to be relevant to my field of study.</p>
             <p>I am open to relocation, though I am quite partial to work in the Greater Boston Area.</p>
             <h1>Let's chat</h1>
