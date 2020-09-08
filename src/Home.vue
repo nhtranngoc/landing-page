@@ -2,7 +2,6 @@
   <div ref="app" id="app">
     <Body />
     <Canvas ref="canvasComponent" :width="canvasWidth" :height="canvasHeight"/>
-    <!-- <Link class="link"/> -->
     <router-view></router-view>
   </div>
 </template>
@@ -21,8 +20,7 @@ export default {
   },
   components: {
     Body,
-    Canvas,
-    // Link
+    Canvas
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);

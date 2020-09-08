@@ -10,7 +10,8 @@
                         text
                         v-bind="attrs"
                         v-on="on"
-                        :to="link.href">
+                        :to="link.to && link.to"
+                        :href="link.href && link.href">
                         {{ link.text }}
                         </v-btn>
                         <v-divider 
@@ -34,22 +35,22 @@ export default {
                 {
                     text: 'About',
                     tooltip: 'About me',
-                    href: '/about'
+                    to: '/about'
                 },
                 {
                     text: 'Hire Me',
                     tooltip: 'I\'m open for hiring!',
-                    href: '/hireme'
+                    to: '/hireme'
                 },
                 {
                     text: 'Projects',
                     tooltip: 'Things I build for fun',
-                    href: '/projects'
+                    to: '/projects'
                 },
                 {
                     text: 'What\'s this?',
                     tooltip: 'About this site',
-                    href: '/site'
+                    to: '/site'
                 },
                 {
                     text: 'Resume',
