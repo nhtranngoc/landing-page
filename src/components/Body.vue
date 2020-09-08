@@ -43,7 +43,7 @@ export default {
   transform: translateY(-50%);
   font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
-  color: #f1faee;
+  /* color: #f1faee; */
 }
 
 .name {
