@@ -42,10 +42,6 @@ export default {
 </script>
 
 <style>
-html {
-  background-color: #1d3557;
-}
-
 .link {
   margin-bottom: 1.8rem;
   position: fixed;
@@ -55,7 +51,7 @@ html {
   font-size: 0.8rem;
   text-align: center;
   font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #f1faee;
+  /* color: red; */
 }
 
 #app {
