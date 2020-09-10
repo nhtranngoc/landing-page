@@ -46,12 +46,6 @@ export default {
   left: 0;
   right: 0;
   transform: translateY(-50%);
-<<<<<<< HEAD
-  font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-align: center;
-  color: #f1faee;
-=======
->>>>>>> 346e488... Fixed not using Arsenal font in name tag
 }
 
 .name {
