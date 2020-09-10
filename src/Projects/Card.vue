@@ -12,7 +12,7 @@
         <p> <strong>Tech:</strong> {{ data.tech }} </p>
     </v-card-subtitle>
     <v-card-text> {{ data.tag }} </v-card-text>
-    <v-card-actions> <v-btn text color="red lighten-1" target="_blank" :href="data.link">Explore</v-btn></v-card-actions>
+    <v-card-actions v-if="data.link"> <v-btn text color="red lighten-1" target="_blank" :href="data.link">Explore</v-btn></v-card-actions>
     </v-card>
 
 </template>

@@ -1,9 +1,15 @@
 <template>
     <div>
         <TopBar :nav="nav" />
-        <div class="paragraph">
-        <Card :data="project" v-for="project in projects" :key="project.name"/>
-        </div>
+        <v-container fluid>
+            <v-row dense justify="center"
+            v-for="project in projects"
+            :key="project.name">
+                <v-col md="auto">
+                    <Card :data="project"/>
+                </v-col>
+            </v-row>
+        </v-container>
         <router-view></router-view>
     </div>
 </template>
@@ -29,7 +35,6 @@ export default {
                     tech: 'Redwood',
                     img: 'https://i.imgur.com/FtUbW1L.jpg',
                     completed: 'Treasured',
-                    link: '#',
                     tag: 'Carved wooden elephant for someone who\'s favorite animal is elephant. She loves it.'
                 },
                 {
@@ -37,7 +42,6 @@ export default {
                     tech: 'Plywood, Pine',
                     img: 'https://i.imgur.com/c07WBTB.jpg',
                     completed: 'Completed',
-                    link: '#',
                     tag: 'Who needs IKEA furniture when you can spend a whole day working on a shoddy but ultimately cool looking coffee table for your fancy frappucino?'
                 },
                 {
@@ -45,7 +49,6 @@ export default {
                     tech: 'Scrapwood',
                     img: 'https://i.imgur.com/mdN5RG0.jpg',
                     completed: 'Broken',
-                    link: '#',
                     tag: 'My first attempt at a hip cutting board. It ended up being too small and broke after a couple of uses. Fun looking though'
                 },
                 {
@@ -53,7 +56,6 @@ export default {
                     tech: 'Redwood',
                     img: 'https://i.imgur.com/RGf6J2T.jpg',
                     completed: 'Warped but not broken',
-                    link: '#',
                     tag: 'My second attempt fared a bit better - though a lack of sufficent sealing did not make for a happy ending.'
                 }, 
                 {
@@ -61,7 +63,6 @@ export default {
                     tech: 'Wood-carved stamp on paper',
                     img: 'https://i.imgur.com/Snr0az8.jpg',
                     completed: 'Given out',
-                    link: '#',
                     tag: 'Lunar New Year Lucky Money envelope I made to give out to friends and family. An exercise in stampmaking.'
                 },
                 {
@@ -69,7 +70,6 @@ export default {
                     tech: 'Photography',
                     img: 'https://i.imgur.com/ve1UgAj.jpg',
                     completed: 'Sold',
-                    link: '#',
                     tag: 'Picture of my childhood home, being repainted before being sold.'
                 },
                 {
@@ -77,7 +77,6 @@ export default {
                     tech: 'Plywood, Laser cut',
                     img: 'https://i.imgur.com/FRxk35U.jpg',
                     completed: 'Completed',
-                    link: '#',
                     tag: 'Layered laser cut plywood for one of my favorite shows. Playing around with wood materials.'
                 },
                 {
@@ -85,7 +84,6 @@ export default {
                     tech: 'Watercolor',
                     img: 'https://i.imgur.com/u1JPrwm.jpg',
                     completed: 'Completed',
-                    link: '#',
                     tag: 'Crude drawing of my crude God given face.'
                 },
                 {
@@ -93,7 +91,6 @@ export default {
                     tech: 'Plywood, Laser cut, acrylic paint',
                     img: 'https://i.imgur.com/2JryDjF.jpg',
                     completed: 'Treasured',
-                    link: '#',
                     tag: 'Someone\'s favorite house being Hufflepuff. She loves it.'
                 }
             ]
