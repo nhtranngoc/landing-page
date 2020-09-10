@@ -46,6 +46,12 @@ export default {
   left: 0;
   right: 0;
   transform: translateY(-50%);
+<<<<<<< HEAD
+=======
+  font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  /* color: #f1faee; */
+>>>>>>> 36363be80d5b3ef987bc1cf5b77d7c6b2c612a50
 }
 
 .name {

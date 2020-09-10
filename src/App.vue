@@ -1,22 +1,34 @@
 <template>
-  <div>
-    <Footer />
-    <router-view></router-view>
-  </div>
+  <v-app>
+    <v-main>
+      <Footer/>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
+import Footer from './components/Footer';
 
 export default {
+  name: 'App',
+
   components: {
-    Footer
-  }
-}
+    Footer,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.v-application {
+    background-color: var(--v-background-base) !important;
+}
 
 .paragraph {
     padding-left: 5%;
@@ -26,15 +38,12 @@ export default {
     margin-right: 20%;
     margin-bottom: 15%;
 }
-
 p, h1, a, .text{
     z-index: 2;
-    color: #f1faee;
     font-size: 110%;
     line-height: 150%;
     font-family: 'Roboto', Arial;
 }
-
 h1 {
     font-size: 160%;
 }

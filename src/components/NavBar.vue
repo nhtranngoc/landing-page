@@ -1,41 +1,70 @@
 <template>
-    <div class="nav">
+    <div>
         <ul>
-        <li class="nav-section"><router-link class="nav-link" to="/about" title="About me">About</router-link></li> |
-        <li class="nav-section"><router-link class="nav-link" to="/hireme" title="I'm open for hiring!">Hire Me</router-link></li> |
-        <li class="nav-section"><router-link class="nav-link" to="/projects" title="My projects">Projects</router-link></li> |
-        <li class="nav-section"><router-link class="nav-link" to="/site" title="What's all this?">What's This?</router-link></li> |
-        <li class="nav-section"><a href="https://www.dropbox.com/s/9dgllxi4trqdd29/NamTran_Resume.pdf?dl=1" title="Download my resume">Resume</a></li>
+            <template
+            v-for="(link, index) in links"
+            class="nav-section">
+                <v-tooltip bottom :key="link.href">
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                        text
+                        v-bind="attrs"
+                        v-on="on"
+                        :to="link.to && link.to"
+                        :href="link.href && link.href">
+                        {{ link.text }}
+                        </v-btn>
+                        <v-divider 
+                        inset
+                        vertical
+                        light
+                        v-if="index < links.length - 1" />
+                    </template>
+                    <span>{{ link.tooltip }}</span>
+                </v-tooltip>
+            </template>
         </ul>
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            links: [
+                {
+                    text: 'About',
+                    tooltip: 'About me',
+                    to: '/about'
+                },
+                {
+                    text: 'Hire Me',
+                    tooltip: 'I\'m open for hiring!',
+                    to: '/hireme'
+                },
+                {
+                    text: 'Projects',
+                    tooltip: 'Things I build for fun',
+                    to: '/projects'
+                },
+                {
+                    text: 'What\'s this?',
+                    tooltip: 'About this site',
+                    to: '/site'
+                },
+                {
+                    text: 'Resume',
+                    tooltip: 'Everything packed in one neat little page',
+                    href: 'https://www.dropbox.com/s/9dgllxi4trqdd29/NamTran_Resume.pdf?dl=1'
+                }
+            ]
+        }
+    }
+}
+</script>
+
 <style scoped>
-ul {
-    padding: 0;
-}
-.nav {
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
 .nav-section {
-    position: relative;
     display: inline-block;
-    margin: 0;
-    padding: 0;
-
-}
-
-.nav-link, a{
-    padding: 0 5px;
-    text-decoration: none;
-    color: #f1faee;
-    border-radius: 5%;
-}
-
-.nav-link:hover, a:hover{
-    background-color: #457b9d;
 }
 </style>

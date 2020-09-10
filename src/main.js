@@ -14,6 +14,7 @@ import Software from './Projects/Software.vue';
 import Hardware from './Projects/Hardware.vue';
 import Misc from './Projects/Misc.vue';
 import Concepts from './Projects/Concepts.vue';
+import vuetify from './plugins/vuetify';
 
 Vue.use(VueMobileDetection);
 Vue.use(VueRouter);
@@ -30,18 +31,19 @@ const routes = [
     {path: '/projects/misc', component: Misc},
     {path: '/projects/concepts', component: Concepts},
   ];
-  
-  const router = new VueRouter({
-    routes
-  });
-  
-  Vue.use(VueGtag, {
-    config: {id: 'UA-173494737-1'},
-    appName: 'namfromnam',
-    pageTrackerScreenviewEnableD: true
-  }, router);
-  
-  new Vue({
-    router,
-    render: h => h(App)
-  }).$mount('#app');
+
+const router = new VueRouter({
+  routes
+});
+
+Vue.use(VueGtag, {
+  config: {id: 'UA-173494737-1'},
+  appName: 'namfromnam',
+  pageTrackerScreenviewEnableD: true
+}, router);
+
+new Vue({
+  router,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app');
