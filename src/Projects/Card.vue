@@ -1,13 +1,20 @@
 <template>
-    <div id="container">
-        <div id="img"><a :href="data.link" target="__blank"><img :src="data.img" /></a></div>
-        <div id="textContainer">
-            <div id="name" class="text">{{data.name}}</div>
-            <div id="status" class="text">Status: {{data.completed}}</div>
-            <div id="tech" class="text">Tech: {{data.tech}}</div>
-            <div id="tag" class="text">{{data.tag}}</div>
-        </div>
-    </div>    
+    <v-card
+      class="secondary ma-3"
+      max-width="60vh"
+      elavation="2"
+      ripple
+    >
+    <v-img :src="data.img" height="200px"></v-img>
+    <v-card-title> {{ data.name }} </v-card-title>
+    <v-card-subtitle> 
+        <p ><strong>Status:</strong> {{ data.completed }} </p>
+        <p> <strong>Tech:</strong> {{ data.tech }} </p>
+    </v-card-subtitle>
+    <v-card-text> {{ data.tag }} </v-card-text>
+    <v-card-actions> <v-btn text color="red lighten-1" target="_blank" :href="data.link">Explore</v-btn></v-card-actions>
+    </v-card>
+
 </template>
 
 <script>
@@ -20,51 +27,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-#img {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 2%;
-}
-
-img {
-    border-radius: 2%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-img:hover {
-    opacity: 0.8;
-}
-
-.text{
-    margin-bottom: .5em;
-    font-size: 100%;
-}
-
-#textContainer {
-    width: 68%;
-}
-
-#container {
-    display: inline-flex;
-    flex-flow: row;
-    margin-bottom: 1em;
-    width: 100%;
-    height: 20%;
-}
-
-#name {
-    font-size: 150%;
-    border-bottom: 1px solid #fff;
-    color: #e46c76;
-}
-
-#tech {
-    margin-bottom: 1.3em;
-}
-
-</style>
