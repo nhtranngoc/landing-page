@@ -1,9 +1,15 @@
 <template>
     <div>
         <TopBar :nav="nav" />
-        <div class="paragraph">
-        <Card :data="project" v-for="project in projects" :key="project.name"/>
-        </div>
+        <v-container fluid>
+            <v-row dense justify="center"
+            v-for="project in projects"
+            :key="project.name">
+                <v-col md="auto">
+                    <Card :data="project"/>
+                </v-col>
+            </v-row>
+        </v-container>
         <router-view></router-view>
     </div>
 </template>
@@ -108,7 +114,6 @@ export default {
                     name: 'Simultaneous Localization and Mapping on TurtleBot',
                     tech: 'Python2.7, ROS',
                     img : 'https://robots.ieee.org/robots/turtlebot/Photos/SD/turtlebot-photo1-full.jpg',
-                    link: '',
                     completed: 'Completed',
                     tag: 'For RBE3002 at WPI - A SLAM algorithm for the TurtleBot, running on Robotics Operating Systems and Python.'
                 },
@@ -116,7 +121,6 @@ export default {
                     name: 'VGA Animation on FPGA',
                     tech: 'Verilog, Artix-7 FPGA',
                     img: 'https://cdn10.bigcommerce.com/s-7gavg/products/106/images/5388/Basys-3-0__67238.1554833305.1280.1280.png?c=2',
-                    link: '',
                     completed: 'Completed',
                     tag: 'For ECE3829 at WPI. Programmed and displayed simple animations through VGA interface. Built test fixture to verify logic in Verilog.'
                 },

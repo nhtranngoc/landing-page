@@ -1,9 +1,15 @@
 <template>
     <div>
         <TopBar :nav="nav" />
-        <div class="paragraph">
-        <Card :data="project" v-for="project in projects" :key="project.name"/>
-        </div>
+        <v-container fluid>
+            <v-row dense justify="center"
+            v-for="project in projects"
+            :key="project.name">
+                <v-col md="auto">
+                    <Card :data="project"/>
+                </v-col>
+            </v-row>
+        </v-container>
         <router-view></router-view>
     </div>
 </template>
