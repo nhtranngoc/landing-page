@@ -9,7 +9,7 @@
                     <Card :data="project"/>
                 </v-col>
             </v-row>
-            <v-row v-if="projects.length === 0">
+            <v-row v-if="projects.length === 0" align="center" justify="center">
                 <p> I'm afraid there's not much here right now. I'll let you know if I come up with anything.</p>
             </v-row>
         </v-container>
