@@ -209,7 +209,6 @@ export default {
 
 <style scoped>
 #canvas {
-    /* position: absolute; */
-    /* background-color: #1d3557; */
+    position: absolute;
 }
 </style>
