@@ -10,10 +10,7 @@ import AboutSite from './AboutSite.vue';
 import HireMe from './HireMe.vue';
 import Projects from './Projects.vue';
 
-import Software from './Projects/Software.vue';
-import Hardware from './Projects/Hardware.vue';
-import Misc from './Projects/Misc.vue';
-import Concepts from './Projects/Concepts.vue';
+import Project from './Projects/Project.vue';
 import vuetify from './plugins/vuetify';
 
 Vue.use(VueMobileDetection);
@@ -26,10 +23,7 @@ const routes = [
   {path: '/site', component: AboutSite},
   {path: '/hireme', component: HireMe},
   {path: '/projects', component: Projects},
-  {path: '/projects/software', component: Software},
-    {path: '/projects/hardware', component: Hardware},
-    {path: '/projects/misc', component: Misc},
-    {path: '/projects/concepts', component: Concepts},
+  {path: '/projects/:category', component: Project},
   ];
 
 const router = new VueRouter({
