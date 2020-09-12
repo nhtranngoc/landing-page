@@ -1,6 +1,7 @@
 <template>
     <v-navigation-drawer 
-    class="primary darken-2"
+    class="primary darken-2 elevation-4"
+    bottom
     app
     >
         <v-list-item>

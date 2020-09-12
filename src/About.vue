@@ -27,4 +27,8 @@
     display: block;
     width: 50%;
 }
+
+.v-btn {
+  text-transform:none !important;
+}
 </style>
