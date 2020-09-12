@@ -45,7 +45,7 @@ export default {
                 {
                     text: 'Projects',
                     tooltip: 'Things I build for fun',
-                    to: '/projects'
+                    to: '/projects/software'
                 },
                 {
                     text: 'What\'s this?',

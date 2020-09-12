@@ -1,22 +1,30 @@
 <template>
   <v-app>
+    <SideBar 
+    v-if="['Home'].indexOf(this.$route.name)"
+    />
     <v-main>
-      <Footer/>
-      <router-view></router-view>
+    <v-container fluid>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+    </v-container>
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
-<script>
+<script>  
 import Footer from './components/Footer';
+import SideBar from './components/SideBar';
 
 export default {
   name: 'App',
 
   components: {
     Footer,
+    SideBar
   },
-
   data: () => ({
     //
   }),
@@ -28,6 +36,19 @@ export default {
 
 .v-application {
     background-color: var(--v-background-base) !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .35s;
+}
+
+.fade-enter-active {
+  transition-delay: .35s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 
 .paragraph {
@@ -44,6 +65,11 @@ p, h1, a, .text{
     line-height: 150%;
     font-family: 'Roboto', Arial;
 }
+
+.v-btn {
+  text-transform:none !important;
+}
+
 h1 {
     font-size: 160%;
 }

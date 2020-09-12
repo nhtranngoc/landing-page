@@ -1,9 +1,9 @@
 <template>
     <div>
-        <TopBar :nav="nav"/>
         <v-container>
             <v-row>
-                <v-col>
+                <v-col cols="9">
+                    <h1>About This Site</h1>
                     <p>This website stems primarily from a need for a job by yours truly. But I also realized that I have never had a centralized portfolio for all of my projects. So there it is, the lengthy history of how this site came to be.</p>
 
                     <h1>Weird circles</h1>
@@ -27,28 +27,8 @@
     </div>
 </template>
 
-<script>
-import TopBar from './components/TopBar.vue';
-
-export default {
-    components: {
-        TopBar
-    },
-    data() {
-        return {
-            nav: [
-                {link: 'site', heading: 'About This Site'}
-            ]
-        }
-    }
-}
-</script>
-
 <style scoped>
 #video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
     height: 450px;
 

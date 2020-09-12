@@ -1,7 +1,7 @@
 <template>
   <v-footer
     padless
-    app
+    absolute
   >
     <v-row
       class="secondary"

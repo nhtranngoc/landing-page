@@ -209,6 +209,6 @@ export default {
 
 <style scoped>
 #canvas {
-    position: absolute;
+    position: fixed;
 }
 </style>
