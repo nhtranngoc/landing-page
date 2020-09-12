@@ -33,4 +33,9 @@
     height: 450px;
 
 }
+
+.v-btn {
+  text-transform:none !important;
+}
+
 </style>

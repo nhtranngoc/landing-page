@@ -1,7 +1,8 @@
 <template>
   <v-footer
     padless
-    absolute
+    app
+    inset
   >
     <v-row
       class="secondary"
@@ -56,7 +57,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Arsenal&display=swap");
 
 * {
-    /* font-size: 0.8rem; */
+    font-size: 0.8rem;
     font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>

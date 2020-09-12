@@ -39,3 +39,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.v-btn {
+  text-transform:none !important;
+}
+</style>

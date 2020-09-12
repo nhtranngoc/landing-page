@@ -66,10 +66,6 @@ p, h1, a, .text{
     font-family: 'Roboto', Arial;
 }
 
-.v-btn {
-  text-transform:none !important;
-}
-
 h1 {
     font-size: 160%;
 }
