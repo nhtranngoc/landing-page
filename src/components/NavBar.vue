@@ -1,30 +1,30 @@
 <template>
-    <div>
-        <ul>
-            <template
-            v-for="(link, index) in links"
-            class="nav-section">
-                <v-tooltip bottom :key="link.href">
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-btn
-                        text
-                        v-bind="attrs"
-                        v-on="on"
-                        :to="link.to && link.to"
-                        :href="link.href && link.href">
-                        {{ link.text }}
-                        </v-btn>
-                        <v-divider 
-                        inset
-                        vertical
-                        light
-                        v-if="index < links.length - 1" />
-                    </template>
-                    <span>{{ link.tooltip }}</span>
-                </v-tooltip>
-            </template>
-        </ul>
-    </div>
+  <div>
+    <ul>
+      <template
+        v-for="(link, index) in links"
+        class="nav-section">
+        <v-tooltip bottom :key="link.href">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              text
+              v-bind="attrs"
+              v-on="on"
+              :to="link.to && link.to"
+              :href="link.href && link.href">
+              {{ link.text }}
+            </v-btn>
+            <v-divider 
+              inset
+              vertical
+              light
+              v-if="index < links.length - 1" />
+          </template>
+          <span>{{ link.tooltip }}</span>
+        </v-tooltip>
+      </template>
+    </ul>
+  </div>
 </template>
 
 <script>

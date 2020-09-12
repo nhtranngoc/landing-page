@@ -1,10 +1,10 @@
 <template>
-    <div id= "container">
-        <div class="countdown" id="day"><span class="num"> {{day}} </span><span class="text">days,</span></div>
-        <div class="countdown" id="hour"><span class="num"> {{hour}} </span><span class="text">hours,</span></div>
-        <div class="countdown" id="min"><span class="num"> {{min}} </span><span class="text">minutes,</span></div>
-        <div class="countdown" id="sec"><span class="num"> {{sec}} </span><span class="text">seconds</span></div>
-    </div>
+  <div id= "container">
+    <div class="countdown" id="day"><span class="num"> {{day}} </span><span class="text">days,</span></div>
+    <div class="countdown" id="hour"><span class="num"> {{hour}} </span><span class="text">hours,</span></div>
+    <div class="countdown" id="min"><span class="num"> {{min}} </span><span class="text">minutes,</span></div>
+    <div class="countdown" id="sec"><span class="num"> {{sec}} </span><span class="text">seconds</span></div>
+  </div>
 </template>
 
 <script>

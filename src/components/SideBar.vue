@@ -1,23 +1,23 @@
 <template>
-<div>
+  <div>
     <v-navigation-drawer 
-    class="primary darken-2"
-    left
-    app
-    v-model="drawer"
-    :permanent="$vuetify.breakpoint.mdAndUp"
+      class="primary darken-2"
+      left
+      app
+      v-model="drawer"
+      :permanent="$vuetify.breakpoint.mdAndUp"
     >
-        <v-list-item>
-    <v-list-item-content>
-        <v-list-item-title class="title">
-        Nam From { Viet }Nam
-        </v-list-item-title>
-    </v-list-item-content>
-    </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Nam From { Viet }Nam
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-    <v-divider></v-divider>
+      <v-divider></v-divider>
 
-    <v-list
+      <v-list
         dense
         nav
       >
@@ -57,18 +57,18 @@
               <v-icon v-text="project.icon"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-                <v-list-item-title> {{ project.title }} </v-list-item-title>
+              <v-list-item-title> {{ project.title }} </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
-          <v-toolbar color="primary darken-2" right class="hidden-md-and-up">
+    <v-toolbar color="primary darken-2" right class="hidden-md-and-up">
       <v-app-bar-nav-icon
-          @click.stop="drawer = !drawer"
+        @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
     </v-toolbar>
-    </div>
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <canvas id="canvas" ref="canvas" :width="width" :height="height"></canvas>
-    </div>
+  <div>
+    <canvas id="canvas" ref="canvas" :width="width" :height="height"></canvas>
+  </div>
 </template>
 
 <script>

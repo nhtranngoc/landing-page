@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <SideBar 
-    v-if="['Home'].indexOf(this.$route.name)"
+      v-if="['Home'].indexOf(this.$route.name)"
     />
     <v-main>
-    <v-container fluid>
-      <transition name="fade">
-        <router-view></router-view>
-      </transition>
-    </v-container>
+      <v-container fluid>
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
+      </v-container>
     </v-main>
     <Footer/>
   </v-app>
