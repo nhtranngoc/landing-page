@@ -39,18 +39,6 @@ export default {
 </script>
 
 <style>
-.link {
-  /* margin-bottom: 1.8rem; */
-  /* position: absolute; */
-  /* bottom: 0.5em; */
-  left: 0;
-  width: 100%;
-  font-size: 0.8rem;
-  text-align: center;
-  font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  /* color: red; */
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   /* left: 50%;

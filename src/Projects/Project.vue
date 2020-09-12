@@ -1,6 +1,5 @@
 <template>
     <div>
-        <TopBar :nav="nav" />
         <v-container fluid>
             <v-row dense justify="center"
             v-for="project in projects"
@@ -18,27 +17,17 @@
 </template>
 
 <script>
-import Card from './Card.vue';
-import TopBar from '../components/TopBar';
+import Card from '../components/Card.vue';
 import data from './data.json';
 
 export default {
     components: {
-        TopBar,
         Card
     },
     computed: {
         projects: function() {
             return data[this.$route.params.category];
         },
-    },
-    data() {
-        return {
-            nav: [
-                {link: 'projects', heading: "Projects"},
-                {link: 'projects/software', heading: "Software"}
-            ],
-        }
     }
 }
 </script>
