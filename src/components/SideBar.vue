@@ -1,8 +1,11 @@
 <template>
+<div>
     <v-navigation-drawer 
-    class="primary darken-2 elevation-4"
-    bottom
+    class="primary darken-2"
+    left
     app
+    v-model="drawer"
+    :permanent="$vuetify.breakpoint.mdAndUp"
     >
         <v-list-item>
     <v-list-item-content>
@@ -58,16 +61,21 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-
       </v-list>
-
     </v-navigation-drawer>
+          <v-toolbar color="primary darken-2" right class="hidden-md-and-up">
+      <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+    </v-toolbar>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
+            drawer: null,
             pages: [
                 {
                     title: 'Home', 
