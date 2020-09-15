@@ -1,7 +1,7 @@
 <template>
   <div class="Body">
-  <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
-  <NavBar />
+    <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
+    <NavBar />
   </div>
 </template>
 

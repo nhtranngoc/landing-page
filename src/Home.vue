@@ -2,7 +2,6 @@
   <div ref="app" id="app">
     <Body />
     <Canvas ref="canvasComponent" :width="canvasWidth" :height="canvasHeight"/>
-    <Link class="link"/>
     <router-view></router-view>
   </div>
 </template>
@@ -10,7 +9,6 @@
 <script>
 import Body from './components/Body.vue'
 import Canvas from './components/Canvas.vue'
-import Link from './components/Link.vue'
 
 export default {
   name: 'App',
@@ -22,8 +20,7 @@ export default {
   },
   components: {
     Body,
-    Canvas,
-    Link
+    Canvas
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
@@ -42,22 +39,6 @@ export default {
 </script>
 
 <style>
-html {
-  background-color: #1d3557;
-}
-
-.link {
-  margin-bottom: 1.8rem;
-  position: fixed;
-  bottom: 0.5em;
-  left: 0;
-  width: 100%;
-  font-size: 0.8rem;
-  text-align: center;
-  font-family: 'Arsenal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #f1faee;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   /* left: 50%;

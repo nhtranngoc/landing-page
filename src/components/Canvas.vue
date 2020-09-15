@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <canvas id="canvas" ref="canvas" :width="width" :height="height"></canvas>
-    </div>
+  <div>
+    <canvas class="elevation-1" id="canvas" ref="canvas" :width="width" :height="height"></canvas>
+  </div>
 </template>
 
 <script>
@@ -209,8 +209,6 @@ export default {
 
 <style scoped>
 #canvas {
-    position: absolute;
-    z-index: -1;
-    background-color: #1d3557;
+    position: fixed;
 }
 </style>
