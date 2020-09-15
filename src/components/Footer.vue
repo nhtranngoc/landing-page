@@ -3,6 +3,7 @@
     padless
     app
     inset
+    class="elevation-0"
   >
     <v-row
       class="secondary"
