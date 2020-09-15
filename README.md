@@ -2,7 +2,7 @@
 
 ![Screenshot](https://raw.githubusercontent.com/nhtranngoc/landing-page/master/screenshot.PNG)
 
-## Project setup
+## Project setup 
 ```
 yarn install
 ```
