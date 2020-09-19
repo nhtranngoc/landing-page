@@ -13,12 +13,32 @@
           <h1> Contact Info </h1>
           <p> My email is highly classified, and is in no way, shape, or form <v-btn text href="mailto:nam@namfromnam.com">nam@namfromnam.com</v-btn></P>
           <p> I also have a GitHub <v-btn text href="https://github.com/nhtranngoc"><v-icon class="ma-1" >mdi-github</v-icon> @nhtranngoc</v-btn> where I put all my silly projects.</p>
+          <h1> My Tech </h1>
+          <p> Below is a list of technology/libraries I have used over the years: </p>
+          <Poketech />
         </v-col>
       </v-row>
     </v-container>
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+import Poketech from './components/Poketech.vue';
+
+export default {
+    data() {
+        return {
+            nav : [
+                {link: 'about', heading: "About me"},
+            ]
+        }
+    },
+    components: {
+        Poketech,
+    }
+}
+</script>
 
 <style scoped>
 .v-image__image {

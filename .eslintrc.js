@@ -9,7 +9,6 @@ const extend = [
 
 const rules = {
     'vue/no-unused-vars': 'error',
-    'vue/html-indent': 'error',
     'vue/no-multi-spaces': 'error',
 };
 
