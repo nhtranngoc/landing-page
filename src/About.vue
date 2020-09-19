@@ -15,7 +15,11 @@
           <p> I also have a GitHub <v-btn text href="https://github.com/nhtranngoc"><v-icon class="ma-1" >mdi-github</v-icon> @nhtranngoc</v-btn> where I put all my silly projects.</p>
           <h1> My Tech </h1>
           <p> Below is a list of technology/libraries I have used over the years: </p>
-          <Poketech />
+          <Poketech @click.native="explain()" />
+          <div v-if="needsExplain"> 
+          <p>Yes, some of these are pokemon.</p>
+          <v-img src="https://i.imgur.com/r0SEEoh.jpeg"/>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -29,10 +33,13 @@ import Poketech from './components/Poketech.vue';
 export default {
     data() {
         return {
-            nav : [
-                {link: 'about', heading: "About me"},
-            ]
+            needsExplain: false,
         }
+    },
+    methods: {
+      explain: function() {
+        this.needsExplain = true;
+      }
     },
     components: {
         Poketech,

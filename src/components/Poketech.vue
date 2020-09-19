@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!loading">
+    <div v-if="!loading" class="ma-2">
          <v-chip 
          class="green darken-4 ma-1"
          v-for="(tech, index) in realTech" :key="index"
