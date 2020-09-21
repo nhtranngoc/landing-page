@@ -1,7 +1,7 @@
 <template>
     <div v-if="!loading">
          <v-chip 
-         class="accent ma-1 chips"
+         class="blue darken-1 ma-1 chips"
          v-for="(tech, index) in realTech" :key="index"
          > {{ tech }} </v-chip>
     </div>
