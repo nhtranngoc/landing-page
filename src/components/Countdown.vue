@@ -52,7 +52,7 @@ export default {
             immediate : true,
             handler(newVal) {
                 if(this.isDisabled) {
-                    this.now = new Date(2020, 8, 1);
+                    this.now = new Date(2020, 6, 27);
                     return;
                 }
 

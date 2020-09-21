@@ -3,7 +3,11 @@
     <v-container>
       <v-row>
         <v-col cols="9">
-          <Countdown/>
+          <Countdown :isDisabled="true"/>
+          <h1 class="update">July 27th, 2020 Update</h1>
+          <p>Fortunately, I have found an (unpaid) internship, which rendered this dramatic countdown clock quite redundant. But since it's unpaid, I am still very much in need of unemployment. Feel free to check out my projects!</p>
+          <v-divider class="ma-2"></v-divider>
+          <h1>Hire Me</h1>
           <p>Hi! You might be wondering what this weirdly ominous clock is counting down to. </p>
           <p>As a matter of fact, it is counting down to September 1st, 2020 - and the only way to stop it is for me to get hired.</p>
           <h1>Why?</h1>
@@ -44,4 +48,9 @@ export default {
 .v-btn {
   text-transform:none !important;
 }
+
+.update {
+  color: #e63946;
+}
+
 </style>
