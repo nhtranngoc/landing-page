@@ -63,7 +63,7 @@ p, h1, a, .text{
     z-index: 2;
     font-size: 110%;
     line-height: 150%;
-    font-family: 'Roboto', Arial;
+    font-family: 'Roboto';
 }
 
 h1 {

@@ -98,7 +98,7 @@ export default {
 
 .num {
     font-size: 400%;
-    color: #e63946;
+    color: var(--v-accent-base);
 }
 
 .text {

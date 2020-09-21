@@ -5,7 +5,7 @@
         <v-col cols="9">
           <Countdown :isDisabled="true"/>
           <h1 class="update">July 27th, 2020 Update</h1>
-          <p>Fortunately, I have found an (unpaid) internship, which rendered this dramatic countdown clock quite redundant. But since it's unpaid, I am still very much in need of unemployment. Feel free to check out my projects!</p>
+          <p>Fortunately, I have found an (unpaid) internship, which rendered this dramatic countdown clock quite redundant. But since it's unpaid, I am still very much in need of unemployment. Feel free to check out my resume and projects!</p>
           <v-divider class="ma-2"></v-divider>
           <h1>Hire Me</h1>
           <p>Hi! You might be wondering what this weirdly ominous clock is counting down to. </p>
@@ -50,7 +50,7 @@ export default {
 }
 
 .update {
-  color: #e63946;
+  color: var(--v-accent-base);
 }
 
 </style>
