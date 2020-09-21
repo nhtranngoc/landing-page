@@ -15,6 +15,12 @@ export default {
             default() {
                 return new Date(2020, 8, 1);
             }
+        },
+        isDisabled: {
+            type: Boolean,
+            default() {
+                return false;
+            }
         }
     },
     data() {
@@ -45,6 +51,11 @@ export default {
         endDate : {
             immediate : true,
             handler(newVal) {
+                if(this.isDisabled) {
+                    this.now = new Date(2020, 8, 1);
+                    return;
+                }
+
                 if(this.timer) {
                     clearInterval(this.timer);
                 }

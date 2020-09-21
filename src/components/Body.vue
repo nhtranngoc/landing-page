@@ -1,6 +1,10 @@
 <template>
   <div class="Body">
-    <p class="name" @mouseover="toggleName" @mouseleave="toggleName"> Nam Tr{{vietname}}n </p>
+    <p class="name"> 
+    Nam Tr
+    <span v-if="vietname" @mouseleave="toggleName">ầ</span>
+    <span v-if="!vietname" @mouseover="toggleName">a</span>
+    n </p>
     <NavBar />
   </div>
 </template>
@@ -19,12 +23,12 @@ export default {
   },
   data: function() {
     return {
-      vietname: 'a'
+      vietname: false
     }
   },
   methods: {
     toggleName() {
-      this.vietname =(this.vietname === 'a') ? 'ầ' : 'a';
+      this.vietname = !this.vietname;
     }
   }
 }
@@ -52,5 +56,13 @@ export default {
   font-size: 8vw;
   margin: 0;
   padding: 0;
+  /* letter-spacing: 3px; */
 }
+
+span {
+  margin: -1.8vw;
+  padding: 0;
+  display: inline;
+}
+
 </style>

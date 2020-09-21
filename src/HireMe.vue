@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="9">
-          <Countdown />
+          <Countdown/>
           <p>Hi! You might be wondering what this weirdly ominous clock is counting down to. </p>
           <p>As a matter of fact, it is counting down to September 1st, 2020 - and the only way to stop it is for me to get hired.</p>
           <h1>Why?</h1>
